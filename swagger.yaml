@@ -1,0 +1,449 @@
+openapi: 3.0.0
+
+info:
+
+  title: jobs API
+
+  contact: {}
+
+  version: '1.0'
+
+servers:
+
+- url: https://jobs-api-edgar.herokuapp.com/api/v1
+
+  variables: {}
+
+paths:
+
+  /auth/register:
+
+    post:
+
+      tags:
+
+      - auth
+
+      summary: register
+
+      operationId: register
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/registerrequest'
+
+            example:
+
+              name: larry
+
+              email: larrysmith@gmail.com
+
+              password: secret
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security: []
+
+  /auth/login:
+
+    post:
+
+      tags:
+
+      - auth
+
+      summary: login
+
+      operationId: login
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/loginrequest'
+
+            example:
+
+              email: karrysmith@gmail.com
+
+              password: secret
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security: []
+
+  /jobs:
+
+    get:
+
+      tags:
+
+      - jobs
+
+      summary: get all jobs
+
+      operationId: getalljobs
+
+      parameters: []
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security:
+
+      - bearer: []
+
+    post:
+
+      tags:
+
+      - jobs
+
+      summary: create job
+
+      operationId: createjob
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/createjobrequest'
+
+            example:
+
+              company: Wipro
+
+              position: Cloud engineer
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security:
+
+      - bearer: []
+
+  /jobs/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: the job id
+
+    get:
+
+      tags:
+
+      - jobs
+
+      summary: get single job
+
+      operationId: getsinglejob
+
+      parameters: []
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security:
+
+      - bearer: []
+
+
+    patch:
+
+      tags:
+
+      - jobs
+
+      summary: update job
+
+      operationId: updatejob
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/updatejobrequest'
+
+            example:
+
+              company: google
+
+              position: Dev ops
+
+              status: interview
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security:
+
+      - bearer: []
+
+
+    delete:
+
+      tags:
+
+      - jobs
+
+      summary: delete job
+
+      operationId: deletejob
+
+      parameters: []
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security:
+
+      - bearer: []
+
+components:
+
+  schemas:
+
+    registerrequest:
+
+      title: registerrequest
+
+      required:
+
+      - name
+
+      - email
+
+      - password
+
+      type: object
+
+      properties:
+
+        name:
+
+          type: string
+
+        email:
+
+          type: string
+
+        password:
+
+          type: string
+
+      example:
+
+        name: larry
+
+        email: larrysmith@gmail.com
+
+        password: secret
+
+    loginrequest:
+
+      title: loginrequest
+
+      required:
+
+      - email
+
+      - password
+
+      type: object
+
+      properties:
+
+        email:
+
+          type: string
+
+        password:
+
+          type: string
+
+      example:
+
+        email: karrysmith@gmail.com
+
+        password: secret
+
+    updatejobrequest:
+
+      title: updatejobrequest
+
+      required:
+
+      - company
+
+      - position
+
+      - status
+
+      type: object
+
+      properties:
+
+        company:
+
+          type: string
+
+        position:
+
+          type: string
+
+        status:
+
+          type: string
+
+      example:
+
+        company: google
+
+        position: Dev ops
+
+        status: interview
+
+    createjobrequest:
+
+      title: createjobrequest
+
+      required:
+
+      - company
+
+      - position
+
+      type: object
+
+      properties:
+
+        company:
+
+          type: string
+
+        position:
+
+          type: string
+
+      example:
+
+        company: Wipro
+
+        position: Cloud engineer
+
+  securitySchemes:
+
+    bearer:
+
+      type: http
+
+      scheme: bearer
+
+security: []
+
+tags:
+
+- name: auth
+
+  description: ''
+
+- name: jobs
+
+  description: ''
+
