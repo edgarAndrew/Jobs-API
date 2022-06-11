@@ -1,3 +1,9 @@
+#### Links
+
+URL: https://jobs-api-edgar.herokuapp.com/
+Documentation: https://jobs-api-edgar.herokuapp.com/api-docs/
+postman link: https://www.getpostman.com/collections/5452978b933d0d4c1281
+
 #### Setup
 
 ```bash
