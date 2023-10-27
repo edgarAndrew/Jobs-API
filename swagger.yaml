@@ -10,7 +10,7 @@ info:
 
 servers:
 
-- url: https://jobs-api-edgar.herokuapp.com/api/v1
+- url: https://jobs-tracker-7o5a.onrender.com/api/v1
 
   variables: {}
 
