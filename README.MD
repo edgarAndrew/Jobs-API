@@ -1,7 +1,7 @@
 #### Links
 
-URL: https://jobs-api-edgar.herokuapp.com/api/v1
-Documentation: https://jobs-api-edgar.herokuapp.com/api-docs/
+URL: https://jobs-tracker-7o5a.onrender.com/api/v1
+Documentation: https://jobs-tracker-7o5a.onrender.com/api-docs/
 postman link: https://www.getpostman.com/collections/5452978b933d0d4c1281
 
 #### Setup
