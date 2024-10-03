@@ -39,7 +39,7 @@ app.use(rateLimiter({
 
 app.use(helmet());
 app.use(cors({
-    origin:["http://localhost:3000",'https://rainbow-duckanoo-2ef567.netlify.app',"http://localhost:5173"],
+    origin:["http://localhost:3000",'https://rainbow-duckanoo-2ef567.netlify.app',"http://localhost:5173","http://localhost:4200"],
     methods:['GET','POST','PATCH','PUT','DELETE']
 }));
 app.use(xss());
